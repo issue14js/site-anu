@@ -9,8 +9,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Initiatives', path: '#initiatives' }, // Anchor link example
-    { name: 'Contact', path: '/contact' },
+    { name: 'Contact', path: '/contact' }
   ];
 
   return (
@@ -18,12 +17,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 text-2xl text-white font-serif font-bold text-primary">
-          <Palette className="text-accent" />
-          <span className='text-white'>ArtistAnnu</span>
+          <Palette className="text-accent text-orange-800" />
+          <span className='text-orange-800'>ArtistAnnu</span>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 font-medium">
+        <div className="hidden text-orange-800 md:flex space-x-8 font-medium">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
@@ -36,14 +35,14 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-orange-800" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-transparent border-t p-4 space-y-4">
+        <div className="md:hidden text-orange-800 bg-transparent border-t p-4 space-y-4">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
